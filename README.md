@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/icon.png" width="140" alt="BLACKBOX icon">
+  <img src="assets/icon.svg" width="140" alt="BLACKBOX icon">
   <h1>BLACKBOX</h1>
   <p><strong>Local repository forensics for structure, hotspots, risks, dependencies, and suspicious code patterns.</strong></p>
 </div>
