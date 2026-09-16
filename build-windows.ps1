@@ -15,7 +15,7 @@ $python = Join-Path $PSScriptRoot ".venv\Scripts\python.exe"
 $pyinstaller = Join-Path $PSScriptRoot ".venv\Scripts\pyinstaller.exe"
 
 & $python -m pip install --upgrade pip pyinstaller
-& $pyinstaller --noconsole --onefile --clean --name "BLACKBOX" --icon "assets\icon.ico" "blackbox_desktop.pyw"
+& $pyinstaller --noconsole --onefile --clean --name "BLACKBOX" "blackbox_desktop.pyw"
 
 Write-Host ""
 Write-Host "Built: $PSScriptRoot\dist\BLACKBOX.exe" -ForegroundColor Green
