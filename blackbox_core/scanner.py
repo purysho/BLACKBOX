@@ -106,7 +106,7 @@ def _iter_files(root: Path) -> Iterable[Path]:
                     path = root / rel
                     if not path.exists() or path.is_symlink():
                         continue
-                    if any(part in IGNORE_DIRS for part in path.parts):
+                    if any(part in IGNORE_DIRS for part in Path(rel).parts):
                         continue
                     yield path
                 return
@@ -120,7 +120,9 @@ def _iter_files(root: Path) -> Iterable[Path]:
             path = Path(base) / name
             if path.is_symlink():
                 continue
-            if any(part in IGNORE_DIRS for part in path.parts):
+            # Only folders inside the repository count; a repo that itself lives
+            # under e.g. ~/work/build/ must still be scanned.
+            if any(part in IGNORE_DIRS for part in path.relative_to(root).parts):
                 continue
             yield path
 

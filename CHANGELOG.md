@@ -2,6 +2,14 @@
 
 All notable changes to BLACKBOX are documented here.
 
+## [1.2.1] - 2026-09-26
+
+### Fixed
+- A repository inside a folder with an ignored name, such as `~/work/build/app`, was scanned as empty because ignored folders were matched against the whole path, not the path inside the repository.
+
+### Added
+- Behavioural tests covering the areas above and the rest of the core.
+
 ## [1.2.0] - 2026-09-26
 
 ### Added
